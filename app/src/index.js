@@ -8,13 +8,13 @@ antes que sus controladores, disponible en la propiedad req.body.
  */
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3900;
+const port = 3000;
 
 //**** Mongoose *******************************************************************:
 
 var mongoose = require('mongoose');
 //Dirección a la base de datos:
-var url = 'mongodb://localhost:27017/api_rest_notas_react';
+var url = 'mongodb://localhost:27017/notasApp';
 //Configuración para evitar fallos en la conexión con mongoDB
 mongoose.Promise = global.Promise;
 //Forzamos que los métodos antiguos de mongodb se desactiven y podamos utilizar los nuevos
@@ -26,11 +26,6 @@ var article_routes = require('./routes/article');
 
 //**** Middlewares ****************************************************************:
 
-/*
-El middleware es el software que brinda servicios y funciones comunes a las aplicaciones.
-Generalmente, se encarga de la gestión de los datos, los servicios de aplicaciones, la mensajería, la autenticación y 
-la gestión de las API.
-*/
 
 //Cargamos el bodyParser: middleware para analizar cuerpos de a través de la URL
 //Este analizador acepta solo la codificación UTF-8 contenida en el body
